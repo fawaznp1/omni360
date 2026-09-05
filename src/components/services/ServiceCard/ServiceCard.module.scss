@@ -1,0 +1,112 @@
+.card {
+    @include glass-card;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    padding: $spacing-lg;
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.badges {
+    display: flex;
+    gap: $spacing-xs;
+}
+
+.name {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    line-height: $line-height-snug;
+}
+
+.desc {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    line-height: $line-height-normal;
+    @include truncate(3);
+    flex: 1;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag {
+    padding: 2px 8px;
+    font-size: 11px;
+    color: $color-text-tertiary;
+    background: $color-surface;
+    border-radius: $radius-sm;
+    border: 1px solid $color-border;
+}
+
+.matchInfo {
+    font-size: $font-size-xs;
+    color: $color-accent-light;
+    font-style: italic;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: $spacing-md;
+    border-top: 1px solid $color-border;
+}
+
+.price {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-text-secondary;
+}
+
+.actions {
+    display: flex;
+    gap: $spacing-sm;
+}
+
+.exploreBtn,
+.startBtn {
+    padding: 6px 14px;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    border-radius: $radius-sm;
+    transition: all $transition-fast;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.exploreBtn {
+    color: $color-text-secondary;
+    background: $color-surface;
+    border: 1px solid $color-border;
+
+    &:hover {
+        color: $color-text-primary;
+        border-color: $color-border-hover;
+    }
+}
+
+.startBtn {
+    color: white;
+    background: $color-accent-gradient;
+    border: none;
+
+    &:hover {
+        box-shadow: $shadow-glow;
+    }
+}

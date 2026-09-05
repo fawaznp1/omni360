@@ -1,0 +1,176 @@
+.page {
+    padding: $spacing-3xl 0 $spacing-5xl;
+}
+
+.searchHeader {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-xl;
+    margin-bottom: $spacing-3xl;
+}
+
+.title {
+    @include heading($font-size-3xl);
+
+    @include sm {
+        font-size: $font-size-2xl;
+    }
+}
+
+// Thinking animation
+.thinking {
+    display: flex;
+    justify-content: center;
+    padding: $spacing-3xl 0;
+    animation: fadeIn 0.3s ease;
+}
+
+.thinkingConsole {
+    @include glass;
+    padding: $spacing-xl $spacing-2xl;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    min-width: 320px;
+
+    @include sm {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+.thinkingStep {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    opacity: 0.3;
+    transition: opacity 0.4s ease;
+
+    &.active {
+        opacity: 1;
+    }
+}
+
+.thinkingDot {
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $font-size-sm;
+    color: $color-accent;
+}
+
+.pulse {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $color-accent;
+    animation: pulse 1s ease infinite;
+}
+
+.thinkingText {
+    @include mono-text;
+    color: $color-text-secondary;
+}
+
+// Results
+.results {
+    animation: fadeInUp 0.4s ease;
+}
+
+.resultsMeta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    margin-bottom: $spacing-xl;
+}
+
+.resultsCount {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+
+    strong {
+        color: $color-text-primary;
+    }
+}
+
+.filters {
+    display: flex;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+}
+
+.filterSelect {
+    padding: 6px 12px;
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+    background: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    cursor: pointer;
+
+    &:focus {
+        border-color: $color-accent;
+    }
+
+    option {
+        background: $color-bg-secondary;
+        color: $color-text-primary;
+    }
+}
+
+.grid {
+    @include service-grid(280px);
+}
+
+// Empty state
+.empty {
+    text-align: center;
+    padding: $spacing-4xl $spacing-xl;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-md;
+    animation: fadeIn 0.4s ease;
+}
+
+.emptyIcon {
+    font-size: 3rem;
+    opacity: 0.3;
+}
+
+.emptyTitle {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+}
+
+.emptyDesc {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+}
+
+.emptyBtn {
+    @include button-base;
+    background: $color-accent-gradient;
+    color: white;
+    padding: 10px 24px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    margin-top: $spacing-sm;
+}
+
+.aiDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+    animation: pulse 2s ease infinite;
+}

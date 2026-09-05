@@ -1,0 +1,63 @@
+.card {
+    @include glass-card;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    padding: $spacing-lg;
+    text-decoration: none;
+    height: 100%;
+}
+
+.iconWrap {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $radius-md;
+    background: rgba(var(--cat-color), 0.1);
+    background: color-mix(in srgb, var(--cat-color) 12%, transparent);
+    font-size: 1.5rem;
+}
+
+.icon {
+    line-height: 1;
+}
+
+.name {
+    font-size: $font-size-md;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+}
+
+.desc {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    line-height: $line-height-normal;
+    @include truncate(2);
+    flex: 1;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: $spacing-sm;
+}
+
+.count {
+    font-size: $font-size-xs;
+    color: $color-text-tertiary;
+}
+
+.arrow {
+    font-size: $font-size-md;
+    color: $color-text-muted;
+    transition: all $transition-fast;
+}
+
+.card:hover .arrow {
+    color: $color-accent-light;
+    transform: translateX(4px);
+}

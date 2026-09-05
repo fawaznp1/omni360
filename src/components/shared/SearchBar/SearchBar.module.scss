@@ -1,0 +1,128 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+
+    &.hero {
+        max-width: 680px;
+
+        .inputWrapper {
+            height: 60px;
+            border-radius: $radius-xl;
+
+            @include md {
+                height: 52px;
+            }
+        }
+
+        .input {
+            font-size: $font-size-md;
+        }
+
+        .searchBtn {
+            padding: 8px 28px;
+            font-size: $font-size-base;
+            border-radius: $radius-lg;
+        }
+    }
+
+    &.header {
+        max-width: 360px;
+
+        .inputWrapper {
+            height: 40px;
+            border-radius: $radius-md;
+        }
+
+        .input {
+            font-size: $font-size-sm;
+        }
+
+        .searchBtn {
+            padding: 6px 16px;
+            font-size: $font-size-xs;
+            border-radius: $radius-sm;
+        }
+    }
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: 0 $spacing-sm 0 $spacing-lg;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid $color-border;
+    backdrop-filter: blur(12px);
+    transition: all $transition-base;
+
+    &:focus-within {
+        border-color: $color-accent;
+        box-shadow: 0 0 0 3px $color-accent-soft, $shadow-glow;
+        background: rgba(255, 255, 255, 0.06);
+    }
+}
+
+.searchIcon {
+    font-size: $font-size-md;
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+.input {
+    flex: 1;
+    height: 100%;
+    color: $color-text-primary;
+
+    &::placeholder {
+        color: $color-text-tertiary;
+    }
+}
+
+.searchBtn {
+    @include button-base;
+    background: $color-accent-gradient;
+    color: white;
+    flex-shrink: 0;
+
+    &:hover {
+        box-shadow: $shadow-glow;
+        transform: translateY(-1px);
+    }
+}
+
+.suggestions {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: $color-bg-tertiary;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    z-index: $z-dropdown;
+    animation: fadeIn 0.15s ease;
+    box-shadow: $shadow-lg;
+}
+
+.suggestion {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-sm $spacing-lg;
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    cursor: pointer;
+    transition: background $transition-fast;
+
+    &:hover,
+    &.selected {
+        background: $color-surface-hover;
+        color: $color-text-primary;
+    }
+}
+
+.suggestionIcon {
+    font-size: $font-size-xs;
+    opacity: 0.4;
+}

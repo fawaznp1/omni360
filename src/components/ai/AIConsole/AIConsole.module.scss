@@ -1,0 +1,256 @@
+.console {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: $color-bg-secondary;
+    border-left: 1px solid $color-border;
+}
+
+// Header
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-md $spacing-lg;
+    border-bottom: 1px solid $color-border;
+    background: rgba(255, 255, 255, 0.02);
+    flex-shrink: 0;
+}
+
+.headerInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.aiIndicator {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+}
+
+.aiDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $color-accent;
+    box-shadow: 0 0 8px $color-accent-glow;
+    animation: pulse 2s ease infinite;
+}
+
+.aiLabel {
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+}
+
+.aiSub {
+    font-size: $font-size-xs;
+    color: $color-text-tertiary;
+}
+
+.headerActions {
+    display: flex;
+    gap: $spacing-xs;
+}
+
+.headerBtn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $radius-sm;
+    font-size: $font-size-md;
+    color: $color-text-tertiary;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: all $transition-fast;
+
+    &:hover {
+        background: $color-surface;
+        color: $color-text-primary;
+    }
+}
+
+// Messages
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: $spacing-lg;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    @include custom-scrollbar;
+}
+
+.message {
+    display: flex;
+    gap: $spacing-sm;
+    animation: fadeInUp 0.3s ease;
+
+    &.user {
+        justify-content: flex-end;
+
+        .msgContent {
+            background: $color-accent-soft;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            color: $color-text-primary;
+            border-radius: $radius-lg $radius-lg 4px $radius-lg;
+            max-width: 85%;
+        }
+    }
+
+    &.assistant {
+        .msgContent {
+            background: $color-surface;
+            border: 1px solid $color-border;
+            color: $color-text-secondary;
+            border-radius: $radius-lg $radius-lg $radius-lg 4px;
+            max-width: 90%;
+        }
+    }
+}
+
+.msgAvatar {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $font-size-sm;
+    color: $color-accent;
+    background: $color-accent-soft;
+    border-radius: 50%;
+    margin-top: 2px;
+}
+
+.msgContent {
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-sm;
+    line-height: $line-height-normal;
+    word-wrap: break-word;
+
+    :global(.check) {
+        color: $color-success;
+        font-weight: $font-weight-bold;
+    }
+
+    strong {
+        color: $color-text-primary;
+    }
+}
+
+// Typing indicator
+.typing {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: $spacing-sm $spacing-md;
+    background: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-lg;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $color-text-tertiary;
+    animation: dotPulse 1.4s ease infinite;
+
+    &:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    &:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+}
+
+// Suggestions
+.suggestions {
+    padding: 0 $spacing-lg $spacing-md;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xs;
+}
+
+.suggestionBtn {
+    padding: 6px 12px;
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+    background: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-full;
+    cursor: pointer;
+    transition: all $transition-fast;
+    white-space: nowrap;
+
+    &:hover {
+        background: $color-accent-soft;
+        color: $color-accent-light;
+        border-color: rgba(108, 92, 231, 0.2);
+    }
+}
+
+// Input
+.inputArea {
+    display: flex;
+    align-items: flex-end;
+    gap: $spacing-sm;
+    padding: $spacing-md $spacing-lg;
+    border-top: 1px solid $color-border;
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.input {
+    flex: 1;
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-sm;
+    color: $color-text-primary;
+    background: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    resize: none;
+    min-height: 40px;
+    max-height: 120px;
+    line-height: $line-height-normal;
+    transition: border-color $transition-fast;
+    @include custom-scrollbar;
+
+    &::placeholder {
+        color: $color-text-muted;
+    }
+
+    &:focus {
+        border-color: $color-accent;
+    }
+}
+
+.sendBtn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $color-accent-gradient;
+    color: white;
+    border: none;
+    border-radius: $radius-md;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-size: $font-size-md;
+    transition: all $transition-fast;
+
+    &:hover:not(:disabled) {
+        box-shadow: $shadow-glow;
+    }
+
+    &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+}

@@ -1,0 +1,194 @@
+// ============================================
+// Omni360 — Global Styles
+// ============================================
+@use './animations';
+
+// --- CSS Custom Properties (for theme switching) ---
+:root {
+    --bg-primary: #{$color-bg-primary};
+    --bg-secondary: #{$color-bg-secondary};
+    --bg-tertiary: #{$color-bg-tertiary};
+    --bg-elevated: #{$color-bg-elevated};
+    --surface: #{$color-surface};
+    --surface-hover: #{$color-surface-hover};
+    --surface-glass: #{$color-surface-glass};
+    --border: #{$color-border};
+    --border-hover: #{$color-border-hover};
+    --text-primary: #{$color-text-primary};
+    --text-secondary: #{$color-text-secondary};
+    --text-tertiary: #{$color-text-tertiary};
+    --text-muted: #{$color-text-muted};
+    --accent: #{$color-accent};
+    --accent-soft: #{$color-accent-soft};
+    --accent-glow: #{$color-accent-glow};
+    --accent-light: #{$color-accent-light};
+    --success: #{$color-success};
+    --warning: #{$color-warning};
+    --danger: #{$color-danger};
+}
+
+[data-theme="light"] {
+    --bg-primary: #{$light-bg-primary};
+    --bg-secondary: #{$light-bg-secondary};
+    --bg-tertiary: #{$light-bg-tertiary};
+    --bg-elevated: #{$light-bg-elevated};
+    --surface: #{$light-surface};
+    --surface-hover: #{$light-surface-hover};
+    --surface-glass: #{$light-surface-glass};
+    --border: #{$light-border};
+    --border-hover: #{$light-border-hover};
+    --text-primary: #{$light-text-primary};
+    --text-secondary: #{$light-text-secondary};
+    --text-tertiary: #{$light-text-tertiary};
+    --text-muted: #{$light-text-muted};
+}
+
+// --- Reset ---
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    @media (prefers-reduced-motion: reduce) {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-normal;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+// --- Base Elements ---
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: $font-weight-bold;
+    line-height: $line-height-tight;
+    letter-spacing: $letter-spacing-tight;
+}
+
+// --- Selection ---
+::selection {
+    background: $color-accent-soft;
+    color: $color-text-primary;
+}
+
+// --- Scrollbar ---
+body {
+    @include custom-scrollbar;
+}
+
+// --- Focus ---
+:focus-visible {
+    @include focus-ring;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+// --- Skip Link ---
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+// --- App Layout ---
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+// --- Utility ---
+.container {
+    @include container;
+}
+
+// --- Section Spacing ---
+.section {
+    padding: $spacing-5xl 0;
+
+    @include md {
+        padding: $spacing-4xl 0;
+    }
+
+    @include sm {
+        padding: $spacing-3xl 0;
+    }
+}
+
+.section-title {
+    @include heading($font-size-3xl);
+    margin-bottom: $spacing-sm;
+
+    @include md {
+        font-size: $font-size-2xl;
+    }
+}
+
+.section-subtitle {
+    @include body-text;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: $spacing-3xl;
+}

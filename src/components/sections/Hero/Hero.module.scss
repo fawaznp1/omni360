@@ -1,0 +1,185 @@
+.hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: $spacing-5xl $spacing-xl;
+
+    @include md {
+        min-height: 80vh;
+        padding: $spacing-4xl $spacing-lg;
+    }
+
+    @include sm {
+        min-height: auto;
+        padding: $spacing-3xl $spacing-md;
+    }
+}
+
+// Animated background
+.bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.gradient1 {
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(ellipse, rgba(108, 92, 231, 0.12) 0%, transparent 70%);
+    animation: float 15s ease-in-out infinite;
+}
+
+.gradient2 {
+    position: absolute;
+    bottom: -20%;
+    right: -10%;
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(ellipse, rgba(0, 210, 255, 0.08) 0%, transparent 70%);
+    animation: float 18s ease-in-out infinite reverse;
+}
+
+.grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 20%, transparent 100%);
+}
+
+// Content
+.content {
+    position: relative;
+    text-align: center;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-lg;
+    animation: fadeInUp 0.8s ease;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: 6px 16px;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    color: $color-accent-light;
+    background: $color-accent-soft;
+    border: 1px solid rgba(108, 92, 231, 0.2);
+    border-radius: $radius-full;
+    letter-spacing: $letter-spacing-wide;
+}
+
+.title {
+    font-size: $font-size-hero;
+    font-weight: $font-weight-extrabold;
+    line-height: $line-height-tight;
+    letter-spacing: $letter-spacing-tight;
+    color: $color-text-primary;
+
+    @include lg {
+        font-size: $font-size-5xl;
+    }
+
+    @include md {
+        font-size: $font-size-4xl;
+    }
+
+    @include sm {
+        font-size: $font-size-3xl;
+    }
+}
+
+.accent {
+    background: $color-accent-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: $font-size-lg;
+    color: $color-text-secondary;
+    line-height: $line-height-relaxed;
+    max-width: 640px;
+
+    @include md {
+        font-size: $font-size-base;
+    }
+}
+
+.searchWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: $spacing-md;
+}
+
+.quickSearches {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-sm;
+    max-width: 600px;
+}
+
+.quickBtn {
+    padding: 6px 14px;
+    font-size: $font-size-xs;
+    color: $color-text-tertiary;
+    background: transparent;
+    border: 1px solid $color-border;
+    border-radius: $radius-full;
+    cursor: pointer;
+    transition: all $transition-fast;
+    white-space: nowrap;
+
+    &:hover {
+        color: $color-text-primary;
+        border-color: $color-border-hover;
+        background: $color-surface;
+    }
+}
+
+.aiInvite {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    font-size: $font-size-sm;
+    color: $color-text-tertiary;
+    margin-top: $spacing-sm;
+}
+
+.aiDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $color-accent;
+    animation: pulse 2s ease infinite;
+}
+
+.aiLink {
+    color: $color-accent-light;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: inherit;
+    transition: color $transition-fast;
+
+    &:hover {
+        color: $color-accent;
+    }
+}

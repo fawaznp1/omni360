@@ -1,0 +1,112 @@
+.page {
+    padding: $spacing-2xl 0 $spacing-5xl;
+}
+
+.notFound {
+    padding: $spacing-5xl 0;
+    text-align: center;
+
+    h1 {
+        @include heading($font-size-2xl);
+        margin-bottom: $spacing-md;
+    }
+
+    p {
+        color: $color-text-secondary;
+        margin-bottom: $spacing-lg;
+    }
+}
+
+.backBtn {
+    @include button-base;
+    background: $color-accent-gradient;
+    color: white;
+    padding: 10px 24px;
+    text-decoration: none;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    font-size: $font-size-sm;
+    color: $color-text-tertiary;
+    margin-bottom: $spacing-2xl;
+
+    a {
+        color: $color-text-secondary;
+        text-decoration: none;
+
+        &:hover {
+            color: $color-text-primary;
+        }
+    }
+
+    .current {
+        color: $color-text-primary;
+    }
+}
+
+.header {
+    margin-bottom: $spacing-3xl;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+}
+
+.icon {
+    font-size: 3rem;
+}
+
+.title {
+    @include heading($font-size-3xl);
+
+    @include sm {
+        font-size: $font-size-2xl;
+    }
+}
+
+.desc {
+    font-size: $font-size-lg;
+    color: $color-text-secondary;
+    max-width: 600px;
+}
+
+.count {
+    font-size: $font-size-sm;
+    color: $color-text-tertiary;
+}
+
+.subcategories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-2xl;
+}
+
+.subBadge {
+    padding: 6px 14px;
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+    background: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-full;
+}
+
+.grid {
+    @include service-grid(280px);
+}
+
+.empty {
+    text-align: center;
+    padding: $spacing-4xl;
+
+    p {
+        color: $color-text-secondary;
+        margin-bottom: $spacing-md;
+    }
+
+    a {
+        color: $color-accent-light;
+    }
+}

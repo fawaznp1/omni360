@@ -1,0 +1,169 @@
+.page {
+    padding: $spacing-3xl 0 $spacing-5xl;
+}
+
+.header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-4xl;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.badge {
+    padding: 6px 16px;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    color: $color-accent-light;
+    background: $color-accent-soft;
+    border: 1px solid rgba(108, 92, 231, 0.2);
+    border-radius: $radius-full;
+    letter-spacing: $letter-spacing-wide;
+}
+
+.title {
+    @include heading($font-size-4xl);
+
+    @include sm {
+        font-size: $font-size-3xl;
+    }
+}
+
+.accent {
+    background: $color-accent-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: $font-size-lg;
+    color: $color-text-secondary;
+    line-height: $line-height-relaxed;
+}
+
+.mission {
+    margin-bottom: $spacing-4xl;
+}
+
+.missionCard {
+    @include glass;
+    padding: $spacing-3xl;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(108, 92, 231, 0.06), rgba(0, 210, 255, 0.03));
+
+    h2 {
+        @include heading($font-size-2xl);
+        margin-bottom: $spacing-lg;
+    }
+
+    p {
+        font-size: $font-size-md;
+        color: $color-text-secondary;
+        line-height: $line-height-relaxed;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+.values {
+    margin-bottom: $spacing-4xl;
+}
+
+.valueGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-lg;
+    margin-top: $spacing-xl;
+
+    @include md {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include sm {
+        grid-template-columns: 1fr;
+    }
+}
+
+.valueCard {
+    @include glass;
+    padding: $spacing-xl;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+
+    .valueIcon {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: $font-size-md;
+        font-weight: $font-weight-semibold;
+        color: $color-text-primary;
+    }
+
+    p {
+        font-size: $font-size-sm;
+        color: $color-text-secondary;
+    }
+}
+
+.cta {}
+
+.ctaCard {
+    @include glass;
+    padding: $spacing-3xl;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-md;
+
+    h2 {
+        @include heading($font-size-2xl);
+    }
+
+    p {
+        font-size: $font-size-md;
+        color: $color-text-secondary;
+    }
+}
+
+.ctaActions {
+    display: flex;
+    gap: $spacing-md;
+    margin-top: $spacing-md;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ctaPrimary {
+    @include button-base;
+    background: $color-accent-gradient;
+    color: white;
+    padding: 12px 32px;
+    font-size: $font-size-base;
+    text-decoration: none;
+
+    &:hover {
+        box-shadow: $shadow-glow;
+    }
+}
+
+.ctaSecondary {
+    @include button-base;
+    background: $color-surface;
+    color: $color-text-primary;
+    border: 1px solid $color-border;
+    padding: 12px 32px;
+    font-size: $font-size-base;
+    text-decoration: none;
+
+    &:hover {
+        background: $color-surface-hover;
+    }
+}

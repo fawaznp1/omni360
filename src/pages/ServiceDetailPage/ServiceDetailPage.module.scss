@@ -1,0 +1,366 @@
+.page {
+    padding: $spacing-2xl 0 $spacing-5xl;
+}
+
+// Not found
+.notFound {
+    padding: $spacing-5xl 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-md;
+
+    .nfIcon {
+        font-size: 3rem;
+        opacity: 0.3;
+    }
+
+    h1 {
+        @include heading($font-size-2xl);
+    }
+
+    p {
+        color: $color-text-secondary;
+        font-size: $font-size-md;
+    }
+}
+
+.backBtn {
+    @include button-base;
+    background: $color-accent-gradient;
+    color: white;
+    padding: 10px 24px;
+    text-decoration: none;
+    margin-top: $spacing-md;
+}
+
+// Breadcrumb
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    font-size: $font-size-sm;
+    color: $color-text-tertiary;
+    margin-bottom: $spacing-2xl;
+    flex-wrap: wrap;
+
+    a {
+        color: $color-text-secondary;
+        text-decoration: none;
+
+        &:hover {
+            color: $color-text-primary;
+        }
+    }
+
+    .current {
+        color: $color-text-primary;
+    }
+}
+
+// Header
+.header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: $spacing-xl;
+    margin-bottom: $spacing-3xl;
+
+    @include md {
+        flex-direction: column;
+    }
+}
+
+.headerLeft {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-lg;
+}
+
+.icon {
+    font-size: 3rem;
+
+    @include md {
+        font-size: 2.5rem;
+    }
+}
+
+.title {
+    @include heading($font-size-3xl);
+    margin-bottom: $spacing-sm;
+
+    @include md {
+        font-size: $font-size-2xl;
+    }
+}
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+}
+
+.ctaBtn {
+    @include button-base;
+    background: $color-accent-gradient;
+    color: white;
+    padding: 12px 32px;
+    font-size: $font-size-base;
+    text-decoration: none;
+    flex-shrink: 0;
+
+    &:hover {
+        box-shadow: $shadow-glow;
+    }
+}
+
+// Content grid
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: $spacing-3xl;
+
+    @include lg {
+        grid-template-columns: 1fr;
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-3xl;
+}
+
+.section {}
+
+.sectionTitle {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    margin-bottom: $spacing-lg;
+    padding-bottom: $spacing-sm;
+    border-bottom: 1px solid $color-border;
+}
+
+.desc {
+    font-size: $font-size-base;
+    color: $color-text-secondary;
+    line-height: $line-height-relaxed;
+}
+
+// Deliverables
+.deliverables {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+}
+
+.deliverable {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    font-size: $font-size-base;
+    color: $color-text-secondary;
+    padding: $spacing-sm 0;
+}
+
+.check {
+    color: $color-success;
+    font-weight: $font-weight-bold;
+}
+
+// Process
+.process {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+}
+
+.processStep {
+    @include glass;
+    display: flex;
+    gap: $spacing-lg;
+    padding: $spacing-lg;
+}
+
+.processNum {
+    @include mono-text;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $color-accent;
+    opacity: 0.4;
+    flex-shrink: 0;
+}
+
+.processTitle {
+    font-size: $font-size-md;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    margin-bottom: $spacing-xs;
+}
+
+.processDesc {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+}
+
+// FAQ
+.faqList {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+}
+
+.faqItem {
+    @include glass;
+    padding: 0;
+    overflow: hidden;
+
+    &[open] .faqQ::after {
+        transform: rotate(180deg);
+    }
+}
+
+.faqQ {
+    padding: $spacing-md $spacing-lg;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    color: $color-text-primary;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &::after {
+        content: '▼';
+        font-size: 10px;
+        color: $color-text-tertiary;
+        transition: transform $transition-base;
+    }
+
+    &::-webkit-details-marker {
+        display: none;
+    }
+}
+
+.faqA {
+    padding: 0 $spacing-lg $spacing-md;
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    line-height: $line-height-normal;
+}
+
+// Sidebar
+.sidebar {
+    @include lg {
+        order: -1;
+    }
+}
+
+.priceCard {
+    @include glass;
+    padding: $spacing-xl;
+    position: sticky;
+    top: calc($header-height + $spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+}
+
+.priceTitle {
+    font-size: $font-size-md;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+}
+
+.priceValue {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.priceFrom {
+    font-size: $font-size-xs;
+    color: $color-text-tertiary;
+}
+
+.priceAmount {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+}
+
+.priceNote {
+    font-size: $font-size-xs;
+    color: $color-text-tertiary;
+    font-style: italic;
+}
+
+.duration {
+    display: flex;
+    justify-content: space-between;
+    padding: $spacing-sm 0;
+    border-top: 1px solid $color-border;
+}
+
+.durationLabel {
+    font-size: $font-size-sm;
+    color: $color-text-tertiary;
+}
+
+.durationValue {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-text-primary;
+}
+
+.sidebarCta {
+    @include button-base;
+    background: $color-accent-gradient;
+    color: white;
+    padding: 12px;
+    font-size: $font-size-base;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+
+    &:hover {
+        box-shadow: $shadow-glow;
+    }
+}
+
+.sidebarAi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-sm;
+    font-size: $font-size-sm;
+    color: $color-accent-light;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.aiDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $color-accent;
+    animation: pulse 2s ease infinite;
+}
+
+// Related
+.related {
+    padding-top: $spacing-4xl;
+    border-top: 1px solid $color-border;
+    margin-top: $spacing-4xl;
+}
+
+.relatedGrid {
+    @include service-grid(280px);
+    margin-top: $spacing-xl;
+}

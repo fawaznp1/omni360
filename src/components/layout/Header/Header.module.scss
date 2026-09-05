@@ -1,0 +1,243 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $header-height;
+    z-index: $z-header;
+    transition: all $transition-base;
+    border-bottom: 1px solid transparent;
+
+    &.scrolled {
+        background: rgba(8, 8, 15, 0.85);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom-color: $color-border;
+    }
+}
+
+.inner {
+    @include container;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: $spacing-xl;
+}
+
+// Logo
+.logo {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logoIcon {
+    font-size: 1.4rem;
+    color: $color-accent;
+}
+
+.logoText {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    letter-spacing: $letter-spacing-tight;
+}
+
+.logoAccent {
+    color: $color-accent;
+}
+
+// Nav
+.nav {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    flex: 1;
+
+    @include lg {
+        display: none;
+    }
+}
+
+.navLink {
+    padding: 6px 14px;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-text-secondary;
+    border-radius: $radius-md;
+    transition: all $transition-fast;
+    cursor: pointer;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+
+    &:hover,
+    &.active {
+        color: $color-text-primary;
+        background: $color-surface;
+    }
+}
+
+.aiDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $color-accent;
+    animation: pulse 2s ease infinite;
+}
+
+// Actions
+.actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    flex-shrink: 0;
+}
+
+.headerSearch {
+    @include lg {
+        display: none;
+    }
+
+    animation: fadeIn 0.2s ease;
+}
+
+.iconBtn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $radius-md;
+    font-size: $font-size-md;
+    color: $color-text-secondary;
+    transition: all $transition-fast;
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    &:hover {
+        background: $color-surface;
+        color: $color-text-primary;
+    }
+}
+
+.ctaBtn {
+    @include button-base;
+    background: $color-accent-gradient;
+    color: white;
+    padding: 8px 20px;
+    font-size: $font-size-sm;
+    border-radius: $radius-md;
+    text-decoration: none;
+
+    &:hover {
+        box-shadow: $shadow-glow;
+        transform: translateY(-1px);
+    }
+
+    @include lg {
+        display: none;
+    }
+}
+
+// Hamburger
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    @include lg {
+        display: flex;
+    }
+
+    span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: $color-text-primary;
+        border-radius: 2px;
+        transition: all $transition-base;
+    }
+
+    &.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    &.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    &.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+// Mobile overlay
+.mobileOverlay {
+    position: fixed;
+    top: $header-height;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    z-index: $z-overlay;
+    animation: fadeIn 0.2s ease;
+    display: none;
+
+    @include lg {
+        display: block;
+    }
+}
+
+.mobileNav {
+    background: $color-bg-secondary;
+    border-bottom: 1px solid $color-border;
+    padding: $spacing-lg;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    animation: fadeInDown 0.25s ease;
+}
+
+.mobileLink {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: 12px $spacing-md;
+    font-size: $font-size-md;
+    color: $color-text-secondary;
+    border-radius: $radius-md;
+    transition: all $transition-fast;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background: $color-surface;
+        color: $color-text-primary;
+    }
+}
+
+.mobileCta {
+    @include button-base;
+    background: $color-accent-gradient;
+    color: white;
+    margin-top: $spacing-sm;
+    padding: 12px;
+    font-size: $font-size-md;
+    text-decoration: none;
+    border-radius: $radius-md;
+    text-align: center;
+}
