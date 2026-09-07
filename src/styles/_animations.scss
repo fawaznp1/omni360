@@ -1,8 +1,9 @@
 // ============================================
-// Omni360 — Animations
+// Omni360 — Animations (Corporate Edition) 
 // ============================================
 @use './variables' as *;
 
+// Standard professional UI transitions
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -16,7 +17,7 @@
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(10px);
     }
 
     to {
@@ -28,7 +29,7 @@
 @keyframes fadeInDown {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(-10px);
     }
 
     to {
@@ -40,7 +41,7 @@
 @keyframes slideInRight {
     from {
         opacity: 0;
-        transform: translateX(30px);
+        transform: translateX(20px);
     }
 
     to {
@@ -52,7 +53,7 @@
 @keyframes slideInLeft {
     from {
         opacity: 0;
-        transform: translateX(-30px);
+        transform: translateX(-20px);
     }
 
     to {
@@ -64,7 +65,7 @@
 @keyframes scaleIn {
     from {
         opacity: 0;
-        transform: scale(0.95);
+        transform: scale(0.98);
     }
 
     to {
@@ -73,6 +74,8 @@
     }
 }
 
+// Deprecated continuous glow pulses for corporate cleanliness. 
+// Mapping them to static selectors or highly dull versions to preserve component state machines.
 @keyframes pulse {
 
     0%,
@@ -81,41 +84,33 @@
     }
 
     50% {
-        opacity: 0.5;
+        opacity: 0.9;
     }
 }
 
 @keyframes glow {
 
+    // Disabled neon drop-shadows
     0%,
     100% {
-        box-shadow: 0 0 5px $color-accent-glow;
+        box-shadow: none;
     }
 
     50% {
-        box-shadow: 0 0 20px $color-accent-glow, 0 0 40px rgba(108, 92, 231, 0.1);
-    }
-}
-
-@keyframes shimmer {
-    0% {
-        background-position: -200% 0;
-    }
-
-    100% {
-        background-position: 200% 0;
+        box-shadow: none;
     }
 }
 
 @keyframes float {
 
+    // Suppressed aggressive Y-transforms, barely floats
     0%,
     100% {
         transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-8px);
+        transform: translateY(-2px);
     }
 }
 
@@ -134,7 +129,7 @@
     0%,
     80%,
     100% {
-        transform: scale(0);
+        transform: scale(0.5);
         opacity: 0.5;
     }
 
@@ -155,12 +150,14 @@
 }
 
 @keyframes gradientShift {
+
+    // Disabled aggressive background shifting
     0% {
         background-position: 0% 50%;
     }
 
     50% {
-        background-position: 100% 50%;
+        background-position: 0% 50%;
     }
 
     100% {
@@ -168,15 +165,43 @@
     }
 }
 
-// Utility classes
+// Standard Utility
 .animate-fade-in {
-    animation: fadeIn 0.5s ease forwards;
+    animation: fadeIn 0.3s ease forwards;
 }
 
 .animate-fade-in-up {
-    animation: fadeInUp 0.5s ease forwards;
+    animation: fadeInUp 0.3s ease forwards;
 }
 
 .animate-slide-in-right {
-    animation: slideInRight 0.5s ease forwards;
+    animation: slideInRight 0.3s ease forwards;
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.3s ease forwards;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.3s ease forwards;
+}
+
+.delay-100 {
+    animation-delay: 100ms;
+}
+
+.delay-200 {
+    animation-delay: 200ms;
+}
+
+.delay-300 {
+    animation-delay: 300ms;
+}
+
+.delay-400 {
+    animation-delay: 400ms;
+}
+
+.delay-500 {
+    animation-delay: 500ms;
 }

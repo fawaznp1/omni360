@@ -9,10 +9,8 @@
     border-bottom: 1px solid transparent;
 
     &.scrolled {
-        background: rgba(8, 8, 15, 0.85);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-bottom-color: $color-border;
+        background: var(--bg-primary);
+        border-bottom-color: var(--border);
     }
 }
 
@@ -88,7 +86,6 @@
     height: 6px;
     border-radius: 50%;
     background: $color-accent;
-    animation: pulse 2s ease infinite;
 }
 
 // Actions
@@ -190,7 +187,7 @@
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(6px);
+    
     z-index: $z-overlay;
     animation: fadeIn 0.2s ease;
     display: none;

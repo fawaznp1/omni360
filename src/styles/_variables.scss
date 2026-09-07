@@ -1,54 +1,54 @@
 // ============================================
-// Omni360 — Design Tokens & Variables
+// Omni360 — Design Tokens & Variables (Corporate Edition)
 // ============================================
 
-// --- Color Palette ---
-$color-bg-primary: #08080f;
-$color-bg-secondary: #0d0d18;
-$color-bg-tertiary: #111122;
-$color-bg-elevated: #161630;
+// Core Theme Colors
+$color-bg-primary: #111827;
+$color-bg-secondary: #1f2937;
+$color-bg-tertiary: #374151;
+$color-bg-elevated: #1f2937;
 
-$color-surface: rgba(255, 255, 255, 0.03);
-$color-surface-hover: rgba(255, 255, 255, 0.06);
-$color-surface-glass: rgba(255, 255, 255, 0.04);
-$color-surface-glass-hover: rgba(255, 255, 255, 0.08);
+// Surfaces & Glass disabled for clean aesthetic
+$color-surface: #1f2937;
+$color-surface-hover: #374151;
+$color-surface-glass: #1f2937;
+$color-surface-glass-hover: #374151;
 
-$color-border: rgba(255, 255, 255, 0.06);
-$color-border-hover: rgba(255, 255, 255, 0.12);
-$color-border-active: rgba(255, 255, 255, 0.18);
+$color-border: #374151;
+$color-border-hover: #4b5563;
+$color-border-active: #6b7280;
 
-$color-text-primary: #f0f0f5;
-$color-text-secondary: #9090a8;
-$color-text-tertiary: #606078;
-$color-text-muted: #45455a;
+$color-text-primary: #f9fafb;
+$color-text-secondary: #d1d5db;
+$color-text-tertiary: #9ca3af;
+$color-text-muted: #6b7280;
 
-// Accent colors
+// Premium SaaS Accent colors
 $color-accent: #2563EB;
 $color-accent-soft: rgba(37, 99, 235, 0.15);
-$color-accent-glow: rgba(37, 99, 235, 0.3);
-$color-accent-light: #60A5FA;
-$color-accent-gradient: $color-accent; // Changed to solid for a premium look
+$color-accent-glow: none;
+$color-accent-light: #3B82F6;
+$color-accent-gradient: $color-accent;
+$color-accent-secondary: #0F172A;
+$color-accent-secondary-soft: rgba(15, 23, 42, 0.05);
 
-$color-accent-secondary: #00d2ff;
-$color-accent-secondary-soft: rgba(0, 210, 255, 0.12);
-
-$color-success: #00e676;
-$color-success-soft: rgba(0, 230, 118, 0.12);
-$color-warning: #ffab40;
-$color-warning-soft: rgba(255, 171, 64, 0.12);
-$color-danger: #ff5252;
-$color-danger-soft: rgba(255, 82, 82, 0.12);
+$color-success: #10B981;
+$color-success-soft: rgba(16, 185, 129, 0.1);
+$color-warning: #F59E0B;
+$color-warning-soft: rgba(245, 158, 11, 0.1);
+$color-danger: #EF4444;
+$color-danger-soft: rgba(239, 68, 68, 0.1);
 
 // --- Light Theme Overrides ---
 $light-bg-primary: #ffffff;
 $light-bg-secondary: #f8fafc;
 $light-bg-tertiary: #f1f5f9;
 $light-bg-elevated: #ffffff;
-$light-surface: rgba(0, 0, 0, 0.03);
-$light-surface-hover: rgba(0, 0, 0, 0.06);
-$light-surface-glass: rgba(255, 255, 255, 0.7);
-$light-border: rgba(0, 0, 0, 0.08);
-$light-border-hover: rgba(0, 0, 0, 0.15);
+$light-surface: #ffffff;
+$light-surface-hover: #f8fafc;
+$light-surface-glass: #ffffff;
+$light-border: #e2e8f0;
+$light-border-hover: #cbd5e1;
 $light-text-primary: #0f172a;
 $light-text-secondary: #475569;
 $light-text-tertiary: #64748b;
@@ -58,17 +58,17 @@ $light-text-muted: #94a3b8;
 $font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 $font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-$font-size-xs: 0.75rem; // 12px
-$font-size-sm: 0.8125rem; // 13px
-$font-size-base: 0.9375rem; // 15px
-$font-size-md: 1rem; // 16px
-$font-size-lg: 1.125rem; // 18px
-$font-size-xl: 1.25rem; // 20px
-$font-size-2xl: 1.5rem; // 24px
-$font-size-3xl: 2rem; // 32px
-$font-size-4xl: 2.5rem; // 40px
-$font-size-5xl: 3.25rem; // 52px
-$font-size-hero: 4rem; // 64px
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.8125rem;
+$font-size-base: 0.9375rem;
+$font-size-md: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 2rem;
+$font-size-4xl: 2.5rem;
+$font-size-5xl: 3.25rem;
+$font-size-hero: 4rem;
 
 $font-weight-light: 300;
 $font-weight-regular: 400;
@@ -99,36 +99,36 @@ $spacing-3xl: 4rem;
 $spacing-4xl: 6rem;
 $spacing-5xl: 8rem;
 
-// --- Border Radius ---
-$radius-sm: 6px;
-$radius-md: 10px;
-$radius-lg: 16px;
-$radius-xl: 20px;
-$radius-2xl: 28px;
+// --- Corporate Border Radius ---
+$radius-sm: 4px;
+$radius-md: 6px;
+$radius-lg: 8px;
+$radius-xl: 12px;
+$radius-2xl: 16px;
 $radius-full: 9999px;
 
-// --- Shadows ---
-$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-$shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
-$shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
-$shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
-$shadow-glow: 0 0 20px rgba(37, 99, 235, 0.15);
-$shadow-glow-lg: 0 0 40px rgba(37, 99, 235, 0.2);
-$shadow-inner: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+// --- SaaS Subtle Shadows ---
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+$shadow-glow: none;
+$shadow-glow-lg: none;
+$shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 
-// --- Glass ---
-$glass-blur: 16px;
-$glass-blur-heavy: 24px;
-$glass-bg: rgba(255, 255, 255, 0.035);
-$glass-bg-hover: rgba(255, 255, 255, 0.06);
-$glass-border: rgba(255, 255, 255, 0.06);
-$glass-border-hover: rgba(255, 255, 255, 0.12);
+// --- Glass (Deprecating values) ---
+$glass-blur: 0px;
+$glass-blur-heavy: 0px;
+$glass-bg: var(--bg-elevated);
+$glass-bg-hover: var(--surface-hover);
+$glass-border: var(--border);
+$glass-border-hover: var(--border-hover);
 
 // --- Transitions ---
 $transition-fast: 150ms ease;
 $transition-base: 250ms ease;
 $transition-slow: 400ms ease;
-$transition-spring: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+$transition-spring: 400ms ease;
 
 // --- Z-Index Scale ---
 $z-dropdown: 100;
@@ -141,12 +141,13 @@ $z-toast: 600;
 
 // --- Layout ---
 $header-height: 64px;
-$ai-console-width: 380px;
+$sidebar-width: 280px;
+$ai-console-width: 400px;
 $container-max-width: 1280px;
-$container-padding: $spacing-xl;
+$container-padding: 24px;
 
-// --- Breakpoints (for use in mixins) ---
-$breakpoint-sm: 480px;
+// --- Breakpoints ---
+$breakpoint-sm: 640px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 1024px;
 $breakpoint-xl: 1280px;

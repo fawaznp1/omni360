@@ -1,5 +1,5 @@
 // ============================================
-// Omni360 — SCSS Mixins
+// Omni360 — SCSS Mixins (Corporate Edition)
 // ============================================
 @use './variables' as *;
 
@@ -40,29 +40,39 @@
     }
 }
 
-// --- Glass Panel ---
+// --- Corporate Card (Replaces Glass) ---
+@mixin corporate-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+    transition: all $transition-base;
+
+    &:hover {
+        border-color: var(--border-hover);
+        box-shadow: $shadow-md;
+        transform: translateY(-2px);
+    }
+}
+
+// Preserve old mixin names for compatibility but route them to corporate card styles
 @mixin glass($blur: $glass-blur) {
-    background: $glass-bg;
-    backdrop-filter: blur($blur);
-    -webkit-backdrop-filter: blur($blur);
-    border: 1px solid $glass-border;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
     border-radius: $radius-lg;
 }
 
 @mixin glass-hover {
-    background: $glass-bg-hover;
-    border-color: $glass-border-hover;
+    background: var(--surface-hover);
+    border-color: var(--border-hover);
 }
 
 @mixin glass-card {
-    @include glass;
-    transition: all $transition-base;
+    @include corporate-card;
+}
 
-    &:hover {
-        @include glass-hover;
-        transform: translateY(-2px);
-        box-shadow: $shadow-glow;
-    }
+@mixin glass-panel {
+    @include corporate-card;
 }
 
 // --- Typography ---
@@ -147,9 +157,9 @@
     }
 }
 
-// --- Glow ---
+// --- Glow (Deprecating to subtle box-shadow for safety) ---
 @mixin accent-glow {
-    box-shadow: 0 0 20px $color-accent-glow, 0 0 60px rgba(108, 92, 231, 0.08);
+    box-shadow: $shadow-md;
 }
 
 // --- Reduced Motion ---
@@ -160,13 +170,13 @@
     }
 }
 
-// --- Button Base ---
+// --- Base Buttons ---
 @mixin button-base {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: $spacing-sm;
-    padding: $spacing-sm $spacing-lg;
+    padding: $spacing-md $spacing-lg;
     font-family: $font-primary;
     font-size: $font-size-sm;
     font-weight: $font-weight-medium;
@@ -188,7 +198,6 @@
     }
 }
 
-// --- Grid ---
 @mixin service-grid($min-col: 280px) {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax($min-col, 1fr));

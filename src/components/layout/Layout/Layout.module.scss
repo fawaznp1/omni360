@@ -29,7 +29,7 @@
     transition: all $transition-spring;
 
     &:hover {
-        transform: scale(1.08);
+        transform: scale(1.05);
         box-shadow: 0 0 30px $color-accent-glow;
     }
 
@@ -51,7 +51,7 @@
         inset: -4px;
         border-radius: 50%;
         border: 2px solid $color-accent;
-        animation: pulse 2s ease infinite;
+        display: none;
         pointer-events: none;
     }
 }
