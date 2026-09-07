@@ -1,10 +1,11 @@
 import { categories } from '@/data/categories';
 import { services as defaultServices } from '@/data/services';
 import { services as additionalServices } from '@/data/services2';
+import { services as thirdServices } from '@/data/services3';
 import type { Category, SearchResult, Service } from '@/types';
 import { searchServices } from '@/utils/searchEngine';
 
-const services = [...defaultServices, ...additionalServices];
+const services = [...defaultServices, ...additionalServices, ...thirdServices];
 
 /**
  * Service Repository — Data access abstraction layer
