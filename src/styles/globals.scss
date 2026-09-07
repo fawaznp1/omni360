@@ -6,10 +6,10 @@
 
 :root {
     // These defaults will be updated by ThemeContext classes
-    --bg-primary: #111827;
-    --bg-secondary: #1f2937;
-    --bg-tertiary: #374151;
-    --bg-elevated: #1f2937;
+    --bg-primary: #000000;
+    --bg-secondary: #0a0a0a;
+    --bg-tertiary: #141414;
+    --bg-elevated: #0a0a0a;
 
     --surface: #1f2937;
     --surface-hover: #374151;
@@ -18,13 +18,16 @@
     --border: #374151;
     --border-hover: #4b5563;
 
-    --text-primary: #f9fafb;
-    --text-secondary: #d1d5db;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
     --text-tertiary: #9ca3af;
     --text-muted: #6b7280;
+
+    --btn-primary-bg: #ffffff;
+    --btn-primary-text: #000000;
 }
 
-.theme-light {
+[data-theme="light"] {
     --bg-primary: #ffffff;
     --bg-secondary: #f8fafc;
     --bg-tertiary: #f1f5f9;
@@ -37,18 +40,21 @@
     --border: #e2e8f0;
     --border-hover: #cbd5e1;
 
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
+    --text-primary: #000000;
+    --text-secondary: #333333;
     --text-tertiary: #64748b;
     --text-muted: #94a3b8;
+
+    --btn-primary-bg: #000000;
+    --btn-primary-text: #ffffff;
 }
 
-.theme-dark {
+[data-theme="dark"] {
     // Values match base :root fallback
-    --bg-primary: #111827;
-    --bg-secondary: #1f2937;
-    --bg-tertiary: #374151;
-    --bg-elevated: #1f2937;
+    --bg-primary: #000000;
+    --bg-secondary: #0a0a0a;
+    --bg-tertiary: #141414;
+    --bg-elevated: #0a0a0a;
 
     --surface: #1f2937;
     --surface-hover: #374151;
@@ -57,8 +63,8 @@
     --border: #374151;
     --border-hover: #4b5563;
 
-    --text-primary: #f9fafb;
-    --text-secondary: #d1d5db;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
 }
 
 // Reset

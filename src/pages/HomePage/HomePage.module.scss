@@ -180,8 +180,8 @@
 
 .ctaPrimary {
     @include button-base;
-    background: $color-accent-gradient;
-    color: white;
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
     padding: 12px 32px;
     font-size: $font-size-base;
     text-decoration: none;

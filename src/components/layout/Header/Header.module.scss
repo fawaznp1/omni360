@@ -126,8 +126,8 @@
 
 .ctaBtn {
     @include button-base;
-    background: $color-accent-gradient;
-    color: white;
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
     padding: 8px 20px;
     font-size: $font-size-sm;
     border-radius: $radius-md;
@@ -187,7 +187,7 @@
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.6);
-    
+
     z-index: $z-overlay;
     animation: fadeIn 0.2s ease;
     display: none;
@@ -229,8 +229,8 @@
 
 .mobileCta {
     @include button-base;
-    background: $color-accent-gradient;
-    color: white;
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
     margin-top: $spacing-sm;
     padding: 12px;
     font-size: $font-size-md;

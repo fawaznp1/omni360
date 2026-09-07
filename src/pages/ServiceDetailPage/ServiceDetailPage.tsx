@@ -13,7 +13,7 @@ export default function ServiceDetailPage() {
         return (
             <div className={styles.notFound}>
                 <div className="container">
-                    <span className={styles.nfIcon}>🔍</span>
+                    <span className={styles.nfIcon}></span>
                     <h1>Service Not Found</h1>
                     <p>This service isn't currently available or doesn't exist.</p>
                     <Link to="/services" className={styles.backBtn}>Browse Services</Link>
@@ -69,7 +69,7 @@ export default function ServiceDetailPage() {
                                 <ul className={styles.deliverables}>
                                     {service.deliverables.map(item => (
                                         <li key={item} className={styles.deliverable}>
-                                            <span className={styles.check}>✓</span>
+                                            <span className={styles.check}></span>
                                             {item}
                                         </li>
                                     ))}

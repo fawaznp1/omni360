@@ -102,7 +102,7 @@ function generateFallbackResponse(message: string, services: Service[]): string 
 
     if (matchedServices.length > 0) {
         const serviceList = matchedServices
-            .map(s => `✓ **${s.name}** — ${s.shortDescription}`)
+            .map(s => ` **${s.name}** — ${s.shortDescription}`)
             .join('\n');
 
         return `Based on your request, here are some services that might help:\n\n${serviceList}\n\nWould you like to know more about any of these? I can explain what's included and help you get started.`;

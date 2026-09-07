@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Hero from '@/components/sections/Hero/Hero';
 import CategoryCard from '@/components/services/CategoryCard/CategoryCard';
 import ServiceCard from '@/components/services/ServiceCard/ServiceCard';
@@ -18,9 +19,29 @@ export default function HomePage() {
     const featuredServices = serviceRepository.getFeatured();
     const popularServices = serviceRepository.getPopular().slice(0, 8);
 
+    // Pagination state for Featured Services
+    const [visibleFeatured, setVisibleFeatured] = useState(8);
+
     return (
         <div className={styles.home}>
             <Hero />
+
+            {/* How it Works (Moved to top based on user request) */}
+            <section className={`section ${styles.howSection}`}>
+                <div className="container">
+                    <h2 className="section-title">How It Works</h2>
+                    <p className="section-subtitle">Getting started is simple.</p>
+                    <div className={styles.howGrid}>
+                        {HOW_IT_WORKS.map(item => (
+                            <div key={item.step} className={styles.howCard}>
+                                <span className={styles.howStep}>{item.step}</span>
+                                <h3 className={styles.howTitle}>{item.title}</h3>
+                                <p className={styles.howDesc}>{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
             {/* Popular Categories */}
             <section className={`section ${styles.categoriesSection}`}>
@@ -38,33 +59,26 @@ export default function HomePage() {
                 </div>
             </section>
 
-            {/* Featured Services */}
+            {/* Featured Services (Paginated) */}
             <section className={`section ${styles.featuredSection}`}>
                 <div className="container">
                     <h2 className="section-title">Featured Services</h2>
                     <p className="section-subtitle">Our most popular services trusted by businesses and professionals.</p>
                     <div className={styles.serviceGrid}>
-                        {featuredServices.map(service => (
+                        {featuredServices.slice(0, visibleFeatured).map(service => (
                             <ServiceCard key={service.id} service={service} />
                         ))}
                     </div>
-                </div>
-            </section>
-
-            {/* How it Works */}
-            <section className={`section ${styles.howSection}`}>
-                <div className="container">
-                    <h2 className="section-title">How It Works</h2>
-                    <p className="section-subtitle">Getting started is simple.</p>
-                    <div className={styles.howGrid}>
-                        {HOW_IT_WORKS.map(item => (
-                            <div key={item.step} className={styles.howCard}>
-                                <span className={styles.howStep}>{item.step}</span>
-                                <h3 className={styles.howTitle}>{item.title}</h3>
-                                <p className={styles.howDesc}>{item.desc}</p>
-                            </div>
-                        ))}
-                    </div>
+                    {visibleFeatured < featuredServices.length && (
+                        <div className={styles.viewAll}>
+                            <button
+                                onClick={() => setVisibleFeatured(prev => prev + 8)}
+                                className={styles.ctaSecondary}
+                            >
+                                Show More
+                            </button>
+                        </div>
+                    )}
                 </div>
             </section>
 

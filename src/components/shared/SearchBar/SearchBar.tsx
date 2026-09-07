@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { services } from '@/data/services';
+import { serviceRepository } from '@/services/serviceRepository';
 import { getSearchSuggestions } from '@/utils/searchEngine';
 import styles from './SearchBar.module.scss';
+import Icon from '../Icon/Icon';
 
 interface SearchBarProps {
     variant?: 'hero' | 'header';
@@ -25,7 +26,8 @@ export default function SearchBar({
 
     const updateSuggestions = useCallback((value: string) => {
         if (value.length >= 2) {
-            const results = getSearchSuggestions(value, services);
+            const allServices = serviceRepository.getAll();
+            const results = getSearchSuggestions(value, allServices);
             setSuggestions(results);
             setShowSuggestions(results.length > 0);
         } else {
@@ -78,7 +80,7 @@ export default function SearchBar({
     return (
         <div className={`${styles.wrapper} ${styles[variant]}`} ref={wrapperRef}>
             <div className={styles.inputWrapper}>
-                <span className={styles.searchIcon}>🔍</span>
+                <span className={styles.searchIcon}></span>
                 <input
                     ref={inputRef}
                     type="text"
@@ -118,7 +120,7 @@ export default function SearchBar({
                             }}
                             onMouseEnter={() => setSelectedIndex(i)}
                         >
-                            <span className={styles.suggestionIcon}>🔍</span>
+                            <span className={styles.suggestionIcon}></span>
                             {suggestion}
                         </li>
                     ))}

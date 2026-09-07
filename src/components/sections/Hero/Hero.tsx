@@ -24,7 +24,7 @@ export default function Hero() {
             </div>
 
             <div className={styles.content}>
-                <span className={styles.badge}>✦ 1000+ Digital Services</span>
+                <span className={styles.badge}>1000+ Digital Services</span>
                 <h1 className={styles.title}>
                     Whatever you need online.{' '}
                     <span className={styles.accent}>We make it happen.</span>

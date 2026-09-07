@@ -102,8 +102,8 @@
 }
 
 .startBtn {
-    color: white;
-    background: $color-accent-gradient;
+    color: var(--btn-primary-text);
+    background: var(--btn-primary-bg);
     border: none;
 
     &:hover {

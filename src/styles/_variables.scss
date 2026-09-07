@@ -3,25 +3,25 @@
 // ============================================
 
 // Core Theme Colors
-$color-bg-primary: #111827;
-$color-bg-secondary: #1f2937;
-$color-bg-tertiary: #374151;
-$color-bg-elevated: #1f2937;
+$color\-bg-primary: var(--bg-primary);
+$color\-bg-secondary: var(--bg-secondary);
+$color\-bg-tertiary: var(--bg-tertiary);
+$color\-bg-elevated: var(--bg-elevated);
 
 // Surfaces & Glass disabled for clean aesthetic
-$color-surface: #1f2937;
-$color-surface-hover: #374151;
-$color-surface-glass: #1f2937;
-$color-surface-glass-hover: #374151;
+$color\-surface: var(--surface);
+$color\-surface-hover: var(--surface-hover);
+$color\-surface-glass: var(--surface-glass);
+$color\-surface-glass-hover: var(--surface-hover);
 
-$color-border: #374151;
-$color-border-hover: #4b5563;
-$color-border-active: #6b7280;
+$color\-border: var(--border);
+$color\-border-hover: var(--border-hover);
+$color\-border-active: var(--border-hover);
 
-$color-text-primary: #f9fafb;
-$color-text-secondary: #d1d5db;
-$color-text-tertiary: #9ca3af;
-$color-text-muted: #6b7280;
+$color\-text-primary: var(--text-primary);
+$color\-text-secondary: var(--text-secondary);
+$color\-text-tertiary: var(--text-tertiary);
+$color\-text-muted: var(--text-muted);
 
 // Premium SaaS Accent colors
 $color-accent: #2563EB;

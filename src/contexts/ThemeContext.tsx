@@ -7,15 +7,15 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-    theme: { mode: 'dark' },
+    theme: { mode: 'light' },
     toggleTheme: () => { },
 });
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-    const [theme, setTheme] = useState<ThemeMode>({ mode: 'dark' });
+    const [theme, setTheme] = useState<ThemeMode>({ mode: 'light' });
 
     useEffect(() => {
-        const stored = localStorage.getItem('omni360-theme') as 'dark' | 'light' | null;
+        const stored = localStorage.getItem('omni360-theme') as 'light' | 'dark' | null;
         if (stored) setTheme({ mode: stored });
     }, []);
 
