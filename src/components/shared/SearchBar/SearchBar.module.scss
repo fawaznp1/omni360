@@ -100,11 +100,12 @@
     top: calc(100% + 6px);
     left: 0;
     right: 0;
-    background: $color-bg-tertiary;
-    border: 1px solid $color-border;
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: $radius-md;
     backdrop-filter: blur(20px);
-    overflow: hidden;
+    max-height: 300px;
+    overflow-y: auto;
     z-index: $z-dropdown;
     animation: fadeIn 0.15s ease;
     box-shadow: $shadow-lg;

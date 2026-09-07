@@ -1,5 +1,6 @@
 .card {
     @include glass-card;
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: $spacing-md;
@@ -19,8 +20,13 @@
 }
 
 .badges {
+    position: absolute;
+    top: -12px;
+    right: 16px;
     display: flex;
     gap: $spacing-xs;
+    background: var(--bg-primary);
+    border-radius: $radius-full;
 }
 
 .name {

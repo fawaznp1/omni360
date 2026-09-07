@@ -1,102 +1,266 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
 .footer {
-    border-top: 1px solid $color-border;
-    background: $color-bg-secondary;
+    border-top: 1px solid var(--border);
+    background-color: var(--bg-primary);
     margin-top: auto;
-}
+    padding-top: $spacing-5xl;
 
-.inner {
-    @include container;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: $spacing-3xl;
-    padding-top: $spacing-4xl;
-    padding-bottom: $spacing-3xl;
-
-    @include lg {
-        grid-template-columns: 1fr 1fr;
-        gap: $spacing-2xl;
-    }
-
-    @include sm {
-        grid-template-columns: 1fr;
-        gap: $spacing-2xl;
+    @include md {
+        padding-top: $spacing-4xl;
     }
 }
 
-.brand {
+.container {
     display: flex;
     flex-direction: column;
-    gap: $spacing-md;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: $spacing-sm;
-    font-size: $font-size-xl;
-    font-weight: $font-weight-bold;
-    color: $color-text-primary;
-    text-decoration: none;
-}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing-4xl;
+    margin-bottom: $spacing-5xl;
 
-.logoIcon {
-    color: $color-accent;
-    font-size: 1.3rem;
-}
+    @include lg {
+        gap: $spacing-2xl;
+    }
 
-.accent {
-    color: $color-accent;
-}
-
-.tagline {
-    font-size: $font-size-sm;
-    color: $color-text-tertiary;
-    line-height: $line-height-normal;
-    max-width: 280px;
-}
-
-.copyright {
-    font-size: $font-size-xs;
-    color: $color-text-muted;
+    @include md {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-bottom: $spacing-3xl;
+    }
 }
 
 .column {
     display: flex;
     flex-direction: column;
-    gap: $spacing-md;
+
+    @include md {
+        border-bottom: 1px solid var(--border);
+    }
 }
 
-.columnTitle {
+.desktopTitle {
     font-size: $font-size-sm;
-    font-weight: $font-weight-semibold;
-    color: $color-text-primary;
-    letter-spacing: $letter-spacing-wide;
+    font-weight: $font-weight-bold;
+    color: var(--text-primary);
+    margin-bottom: $spacing-xl;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    @include md {
+        display: none;
+    }
+}
+
+.accordionHeader {
+    display: none; // Hidden on desktop
+
+    @include md {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: $spacing-lg 0;
+        background: transparent;
+        border: none;
+        font-size: $font-size-md;
+        font-weight: $font-weight-semibold;
+        color: var(--text-primary);
+        cursor: pointer;
+        text-align: left;
+    }
+}
+
+.chevron {
+    color: var(--text-tertiary);
+    display: flex;
+    align-items: center;
 }
 
 .linkList {
     display: flex;
     flex-direction: column;
-    gap: $spacing-sm;
+    gap: $spacing-md;
+
+    @include md {
+        display: none;
+        padding-bottom: $spacing-lg;
+
+        &.open {
+            display: flex;
+        }
+    }
 }
 
 .link {
     font-size: $font-size-sm;
-    color: $color-text-tertiary;
-    transition: color $transition-fast;
+    color: var(--text-secondary);
     text-decoration: none;
+    transition: color $transition-fast;
 
     &:hover {
-        color: $color-text-primary;
+        color: var(--text-primary);
     }
 }
 
-.bottom {
-    @include container;
-    padding-top: $spacing-lg;
-    padding-bottom: $spacing-lg;
-    border-top: 1px solid $color-border;
-    text-align: center;
+.ctaColumn {
+    display: flex;
+    flex-direction: column;
+
+    @include md {
+        padding: $spacing-2xl 0;
+
+        .desktopTitle {
+            display: block; // Show title for CTA column on mobile without accordion
+        }
+    }
+}
+
+.ctaText {
+    font-size: $font-size-sm;
+    color: var(--text-secondary);
+    line-height: $line-height-normal;
+    margin-bottom: $spacing-xl;
+    max-width: 280px;
+
+    @include md {
+        max-width: 100%;
+    }
+}
+
+.ctaBtn {
+    @include button-base;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: flex-start;
+    padding: 12px 20px;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    background: var(--surface-hover);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    transition: all $transition-fast;
+
+    &:hover {
+        background: var(--text-primary);
+        color: var(--bg-primary);
+    }
+}
+
+// Bottom Bar Section
+.bottomBar {
+    padding: $spacing-2xl 0;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+
+    @include md {
+        padding: $spacing-xl 0;
+        gap: $spacing-lg;
+    }
+}
+
+.brandRow {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    @include md {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: $spacing-lg;
+    }
+}
+
+.brandInfo {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+}
+
+.logo {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+
+    span {
+        font-weight: $font-weight-regular;
+    }
+}
+
+.tagline {
+    font-size: $font-size-sm;
+    color: var(--text-tertiary);
+}
+
+.socials {
+    display: flex;
+    gap: $spacing-md;
+}
+
+.socialLink {
+    color: var(--text-tertiary);
+    text-decoration: none;
+    font-size: $font-size-sm;
+    transition: color $transition-fast;
+
+    &:hover {
+        color: var(--text-primary);
+    }
+}
+
+.legalRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-size: $font-size-xs;
-    color: $color-text-muted;
+    color: var(--text-tertiary);
+
+    @include md {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: $spacing-lg;
+    }
+}
+
+.legalLinks {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+
+    a {
+        color: var(--text-tertiary);
+        transition: color $transition-fast;
+
+        &:hover {
+            color: var(--text-primary);
+        }
+    }
+
+    @include sm {
+        flex-wrap: wrap;
+        gap: $spacing-md;
+    }
+}
+
+.cookieBtn {
+    font-size: inherit;
+    color: var(--text-tertiary);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: color $transition-fast;
+
+    &:hover {
+        color: var(--text-primary);
+    }
 }
