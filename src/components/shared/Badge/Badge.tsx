@@ -2,7 +2,7 @@ import styles from './Badge.module.scss';
 
 interface BadgeProps {
     children: React.ReactNode;
-    variant?: 'default' | 'accent' | 'success' | 'warning';
+    variant?: 'default' | 'accent' | 'success' | 'warning' | 'outline';
     size?: 'sm' | 'md';
 }
 

@@ -13,14 +13,15 @@ export default function ServiceCard({ service, matchedFields }: ServiceCardProps
     return (
         <article className={styles.card}>
             <div className={styles.header}>
-                <span className={styles.icon}><Icon name={service.icon} size={20} /></span>
+                <h3 className={styles.name}>
+                    <span className={styles.icon}><Icon name={service.icon} size={20} /></span>
+                    {service.name}
+                </h3>
                 <div className={styles.badges}>
-                    {service.popular && <Badge variant="accent" size="sm">Popular</Badge>}
+                    {service.popular && <Badge variant="outline" size="sm">Popular</Badge>}
                     {service.status === 'coming-soon' && <Badge variant="warning" size="sm">Coming Soon</Badge>}
                 </div>
             </div>
-
-            <h3 className={styles.name}>{service.name}</h3>
             <p className={styles.desc}>{service.shortDescription}</p>
 
             <div className={styles.tags}>
