@@ -10,6 +10,32 @@
 }
 
 // Universal FAB
+.topFab {
+    position: fixed;
+    bottom: 100px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: $z-modal;
+    box-shadow: $shadow-sm;
+    transition: all $transition-fast;
+    animation: fadeIn 0.3s ease forwards;
+
+    &:hover {
+        background: var(--text-primary);
+        color: var(--bg-primary);
+        transform: translateY(-2px);
+    }
+}
+
 .aiFab {
     position: fixed;
     bottom: 24px;
