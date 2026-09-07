@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState, useEffect } from 'react';
-import { services } from '@/data/services';
+import { serviceRepository } from '@/services/serviceRepository';
 import { aiService } from '@/services/aiService';
 import type { AIMessage } from '@/types';
 import styles from './AIConsole.module.scss';
@@ -50,7 +50,8 @@ export default function AIConsole({ onClose }: { onClose: () => void }) {
         setIsTyping(true);
 
         try {
-            const response = await aiService.sendMessage(text.trim(), messages, services);
+            const allServices = serviceRepository.getAll();
+            const response = await aiService.sendMessage(text.trim(), messages, allServices);
             const aiMsg: AIMessage = {
                 id: `msg-${++messageIdCounter}`,
                 role: 'assistant',
