@@ -36,7 +36,6 @@ export default function ServiceCard({ service, matchedFields }: ServiceCardProps
             )}
 
             <div className={styles.footer}>
-                <span className={styles.price}>Custom Quote</span>
                 <div className={styles.actions}>
                     <Link to={`/services/${service.slug}`} className={styles.exploreBtn}>
                         Explore
