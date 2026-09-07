@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Icon from '@/components/shared/Icon/Icon';
 import styles from './ContactPage.module.scss';
 
 export default function ContactPage() {
@@ -23,7 +24,7 @@ export default function ContactPage() {
             <div className={styles.page}>
                 <div className="container">
                     <div className={styles.success}>
-                        <span className={styles.successIcon}>✓</span>
+                        <span className={styles.successIcon}><Icon name="CheckCircle" size={48} /></span>
                         <h2>Thank you!</h2>
                         <p>We've received your message and will get back to you shortly.</p>
                     </div>
@@ -82,15 +83,15 @@ export default function ContactPage() {
 
                     <div className={styles.info}>
                         <div className={styles.infoCard}>
-                            <h3>📧 Email Us</h3>
+                            <h3><Icon name="Mail" size={20} /> Email Us</h3>
                             <p>hello@omni360.com</p>
                         </div>
                         <div className={styles.infoCard}>
-                            <h3>💬 AI Assistant</h3>
+                            <h3><Icon name="Bot" size={20} /> AI Assistant</h3>
                             <p>Need help figuring out what service you need? Our AI assistant can help you discover the right services.</p>
                         </div>
                         <div className={styles.infoCard}>
-                            <h3>⚡ Quick Response</h3>
+                            <h3><Icon name="Zap" size={20} /> Quick Response</h3>
                             <p>We typically respond within 24 hours on business days.</p>
                         </div>
                     </div>
