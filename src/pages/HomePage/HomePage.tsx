@@ -102,18 +102,6 @@ export default function HomePage() {
                 </div>
             </section>
 
-            {/* Popular Services Grid */}
-            <section className={`section ${styles.popularSection}`}>
-                <div className="container">
-                    <h2 className="section-title">Popular Services</h2>
-                    <p className="section-subtitle">Trending services across all categories.</p>
-                    <div className={styles.serviceGrid}>
-                        {popularServices.map(service => (
-                            <ServiceCard key={service.id} service={service} />
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             {/* CTA */}
             <section className={`section ${styles.ctaSection}`}>
