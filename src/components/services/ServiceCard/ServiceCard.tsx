@@ -41,7 +41,7 @@ export default function ServiceCard({ service, matchedFields }: ServiceCardProps
                     <Link to={`/services/${service.slug}`} className={styles.exploreBtn}>
                         Explore
                     </Link>
-                    <Link to="/contact" className={styles.startBtn}>
+                    <Link to={`/contact?service=${service.slug}`} className={styles.startBtn}>
                         Get Started
                     </Link>
                 </div>

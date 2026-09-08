@@ -18,8 +18,13 @@
     @include container;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 100%;
     gap: $spacing-xl;
+
+    @include md {
+        gap: $spacing-sm;
+    }
 }
 
 // Logo

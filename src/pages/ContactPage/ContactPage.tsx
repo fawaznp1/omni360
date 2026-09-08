@@ -1,11 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import Icon from '@/components/shared/Icon/Icon';
 import styles from './ContactPage.module.scss';
 
 export default function ContactPage() {
+    const [searchParams] = useSearchParams();
+    const serviceParam = searchParams.get('service') || '';
+
     const [formData, setFormData] = useState({
-        name: '', email: '', company: '', service: '', message: '',
+        name: '', email: '', company: '', service: serviceParam, message: '',
     });
+
+    useEffect(() => {
+        if (serviceParam) {
+            setFormData(prev => ({ ...prev, service: serviceParam }));
+        }
+    }, [serviceParam]);
     const [submitted, setSubmitted] = useState(false);
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -71,6 +81,9 @@ export default function ContactPage() {
                                     <option value="marketing">Digital Marketing</option>
                                     <option value="ai-automation">AI & Automation</option>
                                     <option value="other">Other</option>
+                                    {serviceParam && !['web-development', 'ecommerce', 'mobile-app', 'design', 'marketing', 'ai-automation', 'other'].includes(serviceParam) && (
+                                        <option value={serviceParam}>{serviceParam.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</option>
+                                    )}
                                 </select>
                             </div>
                         </div>

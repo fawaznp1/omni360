@@ -50,7 +50,7 @@ export default function ServiceDetailPage() {
                             </div>
                         </div>
                     </div>
-                    <Link to="/contact" className={styles.ctaBtn}>Get Started</Link>
+                    <Link to={`/contact?service=${service.slug}`} className={styles.ctaBtn}>Get Started</Link>
                 </header>
 
                 {/* Content Grid */}
