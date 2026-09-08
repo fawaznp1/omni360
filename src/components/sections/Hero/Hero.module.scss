@@ -3,14 +3,14 @@
 
 .hero {
     position: relative;
-    padding: $spacing-5xl 0 $spacing-5xl;
+    padding: $spacing-3xl 0 $spacing-2xl;
     background-color: var(--bg-primary);
     display: flex;
     justify-content: center;
     overflow: hidden;
 
     @include md {
-        padding: $spacing-4xl 0 $spacing-3xl;
+        padding: $spacing-2xl 0 $spacing-xl;
     }
 }
 

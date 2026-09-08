@@ -139,14 +139,14 @@ h6 {
 }
 
 .section {
-    padding: $spacing-5xl 0;
+    padding: $spacing-3xl 0;
 
     @include md {
-        padding: $spacing-4xl 0;
+        padding: $spacing-2xl 0;
     }
 
     @include sm {
-        padding: $spacing-3xl 0;
+        padding: $spacing-lg 0;
     }
 }
 
